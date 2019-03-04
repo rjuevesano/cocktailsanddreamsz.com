@@ -3,14 +3,11 @@ var google;
 function init() {
   // Basic options for a simple Google Map
   // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-  // var myLatlng = new google.maps.LatLng(40.71751, -73.990922);
-  var myLatlng = new google.maps.LatLng(7.1907, 125.4553);
-  // 39.399872
-  // -8.224454
+  var myLatlng = new google.maps.LatLng(7.0779083, 125.611032);
 
   var mapOptions = {
     // How zoomed in you want the map to start at (always required)
-    zoom: 7,
+    zoom: 15,
 
     // The latitude and longitude to center the map (always required)
     center: myLatlng,
@@ -117,14 +114,30 @@ function init() {
         "&sensor=false",
       null,
       function(data) {
-        console.log(data);
-        var p = data.results[0].geometry.location;
-        var latlng = new google.maps.LatLng(p.lat, p.lng);
-        new google.maps.Marker({
-          position: latlng,
-          map: map,
-          icon: "images/loc.png"
-        });
+        if (data.results[0]) {
+          var p = data.results[0].geometry.location;
+          var latlng = new google.maps.LatLng(p.lat, p.lng);
+          new google.maps.Marker({
+            position: latlng,
+            map: map,
+            icon: "images/loc.png"
+          });
+        } else {
+          $("#map").gMap({
+            latitude: 7.0779083,
+            longitude: 125.611032,
+            maptype: "ROADMAP",
+            scrollwheel: false,
+            zoom: 17
+          });
+          $("#map").gMap("addMarker", {
+            latitude: 7.0779083,
+            longitude: 125.611032,
+            content:
+              "<strong>Our Office</strong><br>Cocktails And Dreamsz Mobile Bar, Door, 3 elmcrest building loyala, Obrero, Poblacion, Dabaw, 8000 Lalawigan ng Davao del Sur",
+            popup: true
+          });
+        }
       }
     );
   }

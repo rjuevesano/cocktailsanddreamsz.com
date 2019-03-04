@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cocktails and Dreamsz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+
+    <style>
+    .services-wrap .text { width: 100%!important; text-align: center; }
+    .pricing-entry .desc { width: 100%!important; }
+    .pricing-entry .text .price { width: 250px!important; }
+    ul.addons li { list-style: none; }
+    /* Start state */
+    .animated-modal {
+      max-width: 550px;
+      border-radius: 4px;
+      overflow: hidden;
+      
+      transform: translateY(-50px);
+      transition: all .7s;
+    }
+
+    .animated-modal h2 {
+      color: #000;
+    }
+    .animated-modal em {
+      font-size: 15px;
+    }
+
+    .animated-modal h2,
+    .animated-modal p,
+    .animated-modal ul {
+      transform: translateY(-50px);
+      opacity: 0;
+      
+      transition-property: transform, opacity;
+      transition-duration: .4s;
+    }
+
+    /* Final state */
+    .fancybox-slide--current .animated-modal,
+    .fancybox-slide--current .animated-modal h2,
+    .fancybox-slide--current .animated-modal p,
+    .fancybox-slide--current .animated-modal ul {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Reveal content with different delays */
+    .fancybox-slide--current .animated-modal h2 {
+      transition-delay: .1s;
+    }
+    .fancybox-slide--current .animated-modal p {
+      transition-delay: .3s;
+    }
+    .fancybox-slide--current .animated-modal ul {
+      transition-delay: .5s;
+    }
+    </style>
+  </head>
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+        <a class="navbar-brand" href="index.html">Cocktails<br><small>and Dreamsz</small></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="packages.html" class="nav-link">Packages</a></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link">Gallery</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+		  </div>
+	  </nav>
+
+    <section class="home-slider owl-carousel img" style="background-image: url(images/bg-new-1.jpg);">
+      <div class="slider-item" style="background-image: url(images/bg-new-1.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+            <div class="col-md-7 col-sm-12 text-center ftco-animate">
+            	<h1 class="mb-3 mt-5 bread">Our Packages</h1>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Packages</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-3">
+					<div class="col-md-7 heading-section ftco-animate text-center">
+						<h2 class="mb-4">Best Seller Packages</h2>
+						<p>Check our best selling packages.</p>
+					</div>
+				</div>
+			</div>
+			<div class="container-wrap">
+				<div class="row no-gutters d-flex">
+					<div class="col-lg-4 d-flex ftco-animate">
+						<div class="services-wrap d-flex">
+							<!-- <a href="#" class="img" style="background-image: url(images/pizza-1.jpg);"></a> -->
+							<div class="text p-4">
+								<h3>Torquise Package</h3>
+								<p>Add some details here....</p>
+								<p class="price">
+									<span>₱6,000 (Pay Bar)</span>
+									<!-- <a href="#" class="ml-2 btn btn-white btn-outline-white">Reserve Now</a> -->
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 d-flex ftco-animate">
+						<div class="services-wrap d-flex">
+							<!-- <a href="#" class="img" style="background-image: url(images/pizza-2.jpg);"></a> -->
+							<div class="text p-4">
+								<h3>Garnet Package</h3>
+								<p>Add some details here....</p>
+								<p class="price">
+									<span>₱8,500 (30-40 pax)</span>
+									<!-- <a href="#" class="ml-2 btn btn-white btn-outline-white">Reserve Now</a> -->
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 d-flex ftco-animate">
+						<div class="services-wrap d-flex">
+							<!-- <a href="#" class="img" style="background-image: url(images/pizza-3.jpg);"></a> -->
+							<div class="text p-4">
+								<h3>Ruby Package</h3>
+								<p>Add some details here....</p>
+								<p class="price">
+									<span>₱10,500 (40-60 pax)</span>
+									<!-- <a href="#" class="ml-2 btn btn-white btn-outline-white">Reserve Now</a> -->
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+					<div class="col-md-7 heading-section text-center ftco-animate">
+						<h2 class="mb-4">Our Packages</h2>
+						<p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+						<p class="mt-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-1.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Silver Package</span></h3>
+									<span class="price">₱15,000 (80-100 pax)</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalSilver" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalSilver" class="animated-modal">
+										<h2>Silver Package - <em>₱15,000 (80-100 pax)</em></h2>
+										<p>6 Choices of Cocktails & Dreamsz Special (Long Drinks or Shots)</p>
+										<p style="text-decoration: underline;">Complimentary</p>
+										<ul>
+											<li>50 Servings mixed drink (Rum Coke, Vodka 7, Gin 7)</li>
+											<li>50 Serving Frozen / Blended Cocktail or Smoothies</li>
+											<li>100 Servings of Mocktail / Juice for Welcome Drink</li>
+											<li>5 Liters / 25 Servings Beer</li>
+											<li>30 Shots / Servings  of Brandy, Whiskey or Tequila</li>
+										</ul>
+										<p style="text-decoration: underline;">Inclusions</p>
+										<ul>
+											<li>Complete Bar Set Up</li>
+											<li>Bartenders, Waiter & Barback</li>
+											<li>Barlist</li>
+											<li>Purified Ice, Sanitized Glassware & Equipment</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-2.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Gold Package</span></h3>
+									<span class="price">₱19,500 (100-150 pax)</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalGold" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalGold" class="animated-modal">
+										<h2>Gold Package - <em>₱19,500 (100-150 pax)</em></h2>
+										<p>8 Choices of Cocktails & Dreamsz Special (Long Drinks or Shots)</p>
+										<p>1 Frozen / Blended Cocktail</p>
+										<p style="text-decoration: underline;">Complimentary</p>
+										<ul>
+											<li>100 Servings mixed drink (Rum Coke, Vodka 7, Gin 7)</li>
+											<li>150 Serving Mocktail / Juice for Welcome Drinks</li>
+											<li>10 Liters / 50 servings beer or 3 wines</li>
+											<li>50 Shots / Servings of Brandy / Whiskey or Tequila</li>
+											<li>25 Layered Flaming Shots</li>
+										</ul>
+										<p style="text-decoration: underline;">Inclusions</p>
+										<ul>
+											<li>Complete Bar Set Up</li>
+											<li>Bartenders, Waiter & Barback</li>
+											<li>Barlist</li>
+											<li>Purified Ice, Sanitized Glassware & Equipment</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-3.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Platinum Package</span></h3>
+									<span class="price">₱25,000 (150-185 pax)</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalPlatinum" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalPlatinum" class="animated-modal">
+										<h2>Platinum Package - <em>₱25,000 (150-185 pax)</em></h2>
+										<p>10 Choices of Cocktails & Dreamsz Special</p>
+										<p>2 Frozen / Blended Cocktail</p>
+										<p>2 Choices of Unlimited Mocktails</p>
+										<p style="text-decoration: underline;">Complimentary</p>
+										<ul>
+											<li>150 Servings Mixed Drink</li>
+											<li>3 Cases Beer</li>
+											<li>100 Shots / Servings of Brandy / Whiskey / Tequila</li>
+											<li>3 Bottles of Wines (House Wine)</li>
+											<li>50 Layered Flaming Shots</li>
+										</ul>
+										<p style="text-decoration: underline;">Inclusions</p>
+										<ul>
+											<li>Complete Bar Set Up</li>
+											<li>Bartenders, Waiter & Barback</li>
+											<li>Barlist</li>
+											<li>Purified Ice, Sanitized Glassware & Equipment</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-4.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Diamond Package</span></h3>
+									<span class="price">₱30,000 (185-250 pax)</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalDiamond" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalDiamond" class="animated-modal">
+										<h2>Diamond Package - <em>₱30,000 (185-250 pax)</em></h2>
+										<p>15 Choices of Cocktails & Dreamsz Special (Shots & Long Drinks)</p>
+										<p>2 Frozen / Blended Cocktail</p>
+										<p>2 Choices of Unlimited Mocktail / Welcome Drink</p>
+										<p>1 Choice of Mix Drink (Rhum coke, Gin Tonic 7, Vodka 5 Tonic)</p>
+										<p>1 Unlimited Brewed Coffee</p>
+										<p style="text-decoration: underline;">Complimentary</p>
+										<ul>
+											<li>1 Keg of Beer or 6 Cases Beer</li>
+											<li>100 Layered Flaming Shots</li>
+											<li>10 Sets of Dominoe / Beer Bomb Shots</li>
+											<li>150 Shots Tequila / Brandy or Whiskey</li>
+											<li>5 Bottles of Wine</li>
+											<li>1 Sparkling Wine / Champagne</li>
+										</ul>
+										<p style="text-decoration: underline;">Inclusions</p>
+										<ul>
+											<li>Complete Bar Set Up</li>
+											<li>Bartenders, Waiter & Barback</li>
+											<li>Barlist</li>
+											<li>Purified Ice, Sanitized Glassware & Equipment</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-4.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Premium Package</span></h3>
+									<span class="price">₱35,000 - ₱40,000</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalPremium" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalPremium" class="animated-modal">
+										<h2>Premium Package - <em>₱35,000 - ₱40,000</em></h2>
+										<p>(Details for Discussion)</p>
+										<p>Cocktails, Wines, Beers, Premium Hard Liquors & Spirits</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-5.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Torquise Package</span></h3>
+									<span class="price">₱6,000 (Pay Bar)</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalTorquise" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalTorquise" class="animated-modal">
+										<h2>Torquise Package - <em>₱6,000 (Pay Bar)</em></h2>
+										<p>Bar Set Up Only (with Barlist, Glassware & Equipment)</p>
+										<p>Bar Staff (Bartender, Waiter, Barback)</p>
+										<p>5 Hour Service Time</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-6.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Garnet Package</span></h3>
+									<span class="price">₱8,500 (30-40 pax)</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalGarnet" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalGarnet" class="animated-modal">
+										<h2>Garnet Package - <em>₱8,500 (30-40 pax)</em></h2>
+										<p>150 servings of longs drinks (2 choices / kinds)</p>
+										<p>100 serving of shots (1 choice)</p>
+										<p>25 serving mixed drink (choice of Rum & Coke or Gin Tonic)</p>
+										<p>3 Liters Beer</p>
+										<p style="text-decoration: underline;">Inclusions</p>
+										<ul>
+											<li>Basic Bar Set Up</li>
+											<li>(4) Bartender, Waiter, Barback</li>
+											<li>Barlist, Purified Ice, Sanitized Glassware & Equipment</li>
+											<li>4 hours service time</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-7.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Ruby Package</span></h3>
+									<span class="price">₱10,500 (40-60 pax)</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalRuby" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalRuby" class="animated-modal">
+										<h2>Ruby Package - <em>₱10,500 (40-60 pax)</em></h2>
+										<p>200 servings of longs drinks cocktails (3 choices)</p>
+										<p>150 serving of shots (1 choice)</p>
+										<p>50 serving mixed drink (Vodka Tonic, Gin Tonic, Rhum & Coke)</p>
+										<p>3 Liters Beer</p>
+										<p>1 Complimentary House Wine</p>
+										<p style="text-decoration: underline;">Inclusions</p>
+										<ul>
+											<li>Basic Bar Set Up</li>
+											<li>(4) Bartender, Waiter, Barback</li>
+											<li>Barlist, Purified Ice, Sanitized Glassware & Equipment</li>
+											<li>4 hours service time</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-entry d-flex ftco-animate">
+							<!-- <div class="img" style="background-image: url(images/pizza-8.jpg);"></div> -->
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Pearl Package</span></h3>
+									<span class="price">₱13,000 (60-80 pax)</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalPearl" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalPearl" class="animated-modal">
+										<h2>Pearl Package - <em>₱13,000 (60-80 pax)</em></h2>
+										<p>300 servings of longs drinks (3 choices)</p>
+										<p>200 serving of shots (2 choices)</p>
+										<p>75 serving mixed drink (Vodka Tonic, Gin Tonic, Rhum & Coke)</p>
+										<p>80-100 Servings Mocktails</p>
+										<p>5 Liters Beer</p>
+										<p>1 Complimentary House Wine</p>
+										<p style="text-decoration: underline;">Inclusions</p>
+										<ul>
+											<li>Basic Bar Set Up</li>
+											<li>(4) Bartender, Waiter, Barback</li>
+											<li>Barlist, Purified Ice, Sanitized Glassware & Equipment</li>
+											<li>4 hours service time</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+					<div class="col-md-7 heading-section text-center ftco-animate">
+						<h2 class="mb-4">Add-Ons</h2>
+						<p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+						<ul class="mt-5 addons">
+							<li>Cocktail Parade: ₱1,500.00 for every 100 Pax</li>
+							<li>Unlimited Welcome Drink: ₱1,000.00</li>
+							<li>Case of Beer: ₱850.00</li>
+							<li>Beer Keg: ₱3,850.00</li>
+							<li>Layered Flaming Shots: ₱1,000.00 / 25 servings</li>
+							<li>Additional Guest: ₱2,500.00 / 50 guest</li>
+							<li>Additional Cocktail: ₱3,000.00 / 50 guest</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <footer class="ftco-footer ftco-section img">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row mb-5">
+					<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+						<div class="ftco-footer-widget mb-4">
+							<h2 class="ftco-heading-2">About Us</h2>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+								<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="https://www.facebook.com/cocktailsanddreams0727/" target="_blank"><span class="icon-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
+						<div class="ftco-footer-widget mb-4">
+							<h2 class="ftco-heading-2">Have a Questions?</h2>
+							<div class="block-23 mb-3">
+								<ul>
+									<li><span class="icon icon-map-marker"></span><span class="text">LE COCKTAIL ET REVES, Door, 3 elmcrest building loyala, Obrero, Poblacion, Dabaw, 8000 Lalawigan ng Davao del Sur</span></li>
+									<li><a href="tel:+639177135618"><span class="icon icon-phone"></span><span class="text">+63 917 713 5618</span></a></li>
+									<li><a href="mailto:xty2280@yahoo.com"><span class="icon icon-envelope"></span><span class="text">xty2280@yahoo.com</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/aos.js"></script>
+		<script src="js/jquery.animateNumber.min.js"></script>
+		<script src="js/bootstrap-datepicker.js"></script>
+		<script src="js/jquery.timepicker.min.js"></script>
+		<script src="js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="js/google-map.js"></script>
+		<script src="js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+  </body>
+</html>
