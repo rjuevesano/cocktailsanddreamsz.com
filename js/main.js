@@ -313,7 +313,7 @@ AOS.init({
       data: $this.serialize(),
       type: "POST",
       crossDomain: true,
-      // dataType: "jsonp",
+      dataType: "jsonp",
       success: function() {},
       error: function(e) {
         console.log(e);
