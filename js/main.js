@@ -304,6 +304,29 @@ AOS.init({
 
   $("#appointment_time").timepicker();
 
+  // quotes
+  try {
+    var quotes = [
+      "The Party Saver",
+      "Mindanao's 1st Mobile Bar",
+      "Best Tasting Cocktails",
+      "Party Till You Drop"
+    ];
+
+    var quotesCounter = 0;
+
+    setInterval(function() {
+      $(".main-slide-title").fadeOut(400, function() {
+        $(this)
+          .html(quotes[quotesCounter])
+          .fadeIn(400);
+      });
+      if (quotesCounter === quotes.length - 1) quotesCounter = 0;
+      else quotesCounter++;
+    }, 5000);
+  } catch (e) {}
+  // end quotes
+
   $(document).on("submit", "#form-contact", function(e) {
     e.preventDefault();
 
