@@ -86,66 +86,7 @@
       <div class="container">
         <div class="row d-flex">
           <div class="col-md-12">
-            <div class="row row-striped ftco-animate">
-              <div class="col-2 text-right">
-                <h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
-                <h2>OCT</h2>
-              </div>
-              <div class="col-10">
-                <h3 class="text-uppercase"><strong>Ice Cream Social</strong></h3>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-                  <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
-                  <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Cafe</li>
-                </ul>
-                <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </div>
-            <div class="row row-striped ftco-animate">
-              <div class="col-2 text-right">
-                <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
-                <h2>OCT</h2>
-              </div>
-              <div class="col-10">
-                <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
-                  <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
-                  <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
-                </ul>
-                <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </div>
-            <div class="row row-striped ftco-animate">
-              <div class="col-2 text-right">
-                <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
-                <h2>OCT</h2>
-              </div>
-              <div class="col-10">
-                <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
-                  <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
-                  <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
-                </ul>
-                <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </div>
-            <div class="row row-striped ftco-animate">
-              <div class="col-2 text-right">
-                <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
-                <h2>OCT</h2>
-              </div>
-              <div class="col-10">
-                <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
-                  <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
-                  <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
-                </ul>
-                <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </div>
+            <div id="data"></div>
           </div>
         </div>
       </div>
@@ -202,16 +143,56 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/main.js?v=1"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-      var url = "https://sheets.googleapis.com/v4/spreadsheets/1pO-Rsn2dJo_rpPjCKEsNe8VAJMKPwr_wZyg5TqjUsXQ/?key=AIzaSyCdaa9cBDuAvby5U12E6vOP3Ejj7_hvKoE&includeGridData=true";                                                             
-      axios.get(url)
-        .then(function (response) {
-          console.log(response);                                                                                                                                                    
-        })
-        .catch(function (error) {
-          console.log(error);                                                                                                                                                       
-        });   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript">
+      var spData = null;
+      function doData(json) {
+        spData = json.feed.entry;
+      }
+      
+      function drawCell(tr, val) {
+        var td = $("<td/>");
+        tr.append(td);
+        td.append(val);
+        return td;
+      }
+      function drawRow(table, rowData) {
+        if (rowData == null) return null;
+        if (rowData.length == 0) return null;
+        var date = moment(rowData[0], "MM/DD/YYYY hh:mm A - hh:mm A");
+        var time = rowData[0].split(' ');
+        var tr = $('<div class="row row-striped"><div class="col-2 text-right"><h1 class="display-4"><span class="badge badge-secondary">'+ date.format('DD') +'</span></h1><h2>'+ date.format('MMM').toUpperCase() +'</h2></div><div class="col-10"><h3 class="text-uppercase"><strong>'+ rowData[1] +'</strong></h3><ul class="list-inline"><li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> '+ date.format('dddd') +'</li><li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> '+ time[1] +' '+ time[2] +' - '+ time[4] +' '+ time[5] +'</li><li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> '+ rowData[3] +'</li></ul><p>'+ rowData[2] +'</p></div>');
+        table.append(tr);
+      }
+      
+      function drawTable(parent) {
+        var table = $("<div/>");
+        parent.append(table);
+        return table;
+      }
+      
+      function readData(parent) {
+        var data = spData;
+        var table = drawTable(parent);
+        var rowData = [];
+        
+        for(var r=0; r<data.length; r++) {
+          var cell = data[r]["gs$cell"];
+          var val = cell["$t"];
+          if (cell.row !== "1") {
+            if (cell.col == 1) {
+              drawRow(table, rowData);
+              rowData = [];
+            }
+            rowData.push(val);
+          }
+        }
+        drawRow(table, rowData);
+      }
+      $(document).ready(function(){
+        readData($("#data"));
+      });
     </script>
+    <script src="https://spreadsheets.google.com/feeds/cells/1pO-Rsn2dJo_rpPjCKEsNe8VAJMKPwr_wZyg5TqjUsXQ/1/public/values?alt=json-in-script&callback=doData"></script>
   </body>
 </html>
