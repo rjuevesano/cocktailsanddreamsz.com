@@ -89,8 +89,12 @@
 						<p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
 					</div>
 				</div>
-				<div class="row">
+				<div style="text-align: center; margin-bottom: 50px;" class="ftco-animate">
+					<a href="javascript:;" onClick="document.querySelector('.wedding').style.display = 'flex'; document.querySelector('.corporate').style.display = 'none'; $('body').find('.aactive').removeClass('aactive'); $(this).addClass('aactive');" class="btn btn-primary aactive">Wedding</a><a href="javascript:;" onClick="document.querySelector('.wedding').style.display = 'none'; document.querySelector('.corporate').style.display = 'flex'; $('body').find('.aactive').removeClass('aactive'); $(this).addClass('aactive');" class="btn btn-primary">Corporate</a>
+				</div>
+				<div class="row wedding">
 					<div class="col-md-6">
+						<h4 style="text-align: center; margin-bottom: 20px;" class="ftco-animate">Unlimited Packages</h4>
 						<div class="pricing-entry d-flex ftco-animate">
 							<!-- <div class="img" style="background-image: url(images/pizza-1.jpg);"></div> -->
 							<div class="desc pl-3">
@@ -241,8 +245,8 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="col-md-6">
+						<h4 style="text-align: center; margin-bottom: 20px;" class="ftco-animate">Consumable Packages</h4>
 						<div class="pricing-entry d-flex ftco-animate">
 							<!-- <div class="img" style="background-image: url(images/pizza-5.jpg);"></div> -->
 							<div class="desc pl-3">
@@ -318,6 +322,86 @@
 						</div>
 					</div>
 				</div>
+				<div class="row corporate" style="display:none;">
+					<div class="col-md-6">
+						<div class="pricing-entry d-flex ftco-animate">
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Package A</span></h3>
+									<span class="price" style="width: 500px !important;">₱85 / Pax for 300 Pax and above</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalPackageA" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalPackageA" class="animated-modal">
+										<h2>Package A - <em>₱85 / Pax for 300 Pax and above</em></h2>
+										<p>3 kinds of cocktails and shots unlimited</p>
+										<p style="text-decoration: underline;">Complimentary</p>
+										<ul>
+											<li>300 Servings of Beer (by the glass)</li>
+											<li>100 Servings of Mixed Drink (Rhum and Coke/Gin Tonic)</li>
+											<li>300 Servings of Mocktails</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="pricing-entry d-flex ftco-animate">
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Package B</span></h3>
+									<span class="price" style="width: 500px !important;">₱100 / Pax for 300 Pax and above</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalPackageB" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalPackageB" class="animated-modal">
+										<h2>Package B - <em>₱100 / Pax for 300 Pax and above</em></h2>
+										<p>5 kinds of cocktails and shots unlimited</p>
+										<p style="text-decoration: underline;">Complimentary</p>
+										<ul>
+											<li>300 Servings of Beer (by the glass)</li>
+											<li>100 Servings of Mixed Drink (Rhum and Coke/Gin Tonic)</li>
+											<li>300 Servings of Mocktails</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="pricing-entry d-flex ftco-animate">
+							<div class="desc pl-3">
+								<div class="d-flex text align-items-center">
+									<h3><span>Package C</span></h3>
+									<span class="price" style="width: 500px !important;">₱150 / Pax for 300 Pax and above</span>
+								</div>
+								<div class="d-block">
+									<p><a data-fancybox data-animation-duration="700" data-src="#animatedModalPackageC" href="javascript:;" class="btn btn-primary">View details</a></p>
+									<div style="display: none;" id="animatedModalPackageC" class="animated-modal">
+										<h2>Package C - <em>₱150 / Pax for 300 Pax and above</em></h2>
+										<p>8 kinds of cocktails and shots unlimited</p>
+										<p>2 kinds of Mocktails</p>
+										<p style="text-decoration: underline;">Complimentary</p>
+										<ul>
+											<li>300 Servings of Beer (by the glass)</li>
+											<li>300 Servings of Mixed Drink (Rhum and Coke/Gin Tonic)</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 ftco-animate">
+						<strong>Package Inclusion:</strong>
+						<ul>
+							<li>Personalized barlist</li>
+							<li>Complete Bar Set up (Sanitized bar amenities & Glassware)</li>
+							<li>Bartenders & waiters (uniformed)</li>
+						</ul>
+						<strong>Note: All Packages are VAT inclusive and net of all taxes</strong>
+					</div>
+				</div>
 				<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
 					<div class="col-md-7 heading-section text-center ftco-animate">
 						<h2 class="mb-4">Add-Ons</h2>
@@ -363,7 +447,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="col-md-6">
 						<div class="pricing-entry d-flex ftco-animate">
 							<!-- <div class="img" style="background-image: url(images/pizza-4.jpg);"></div> -->

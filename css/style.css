@@ -11750,3 +11750,10 @@ ul.addons li {
 .row-striped h2 {
   color: #000 !important;
 }
+
+/* custom */
+.aactive {
+  border: 1px solid #fac564;
+  background: transparent !important;
+  color: #fac564 !important;
+}
