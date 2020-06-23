@@ -43,8 +43,6 @@ AOS.init({
 
   var carousel = function () {
     $(".home-slider").owlCarousel({
-      mouseDrag: true,
-      touchDrag: false,
       loop: true,
       autoplay: true,
       margin: 0,
@@ -61,14 +59,10 @@ AOS.init({
         0: {
           items: 1,
           nav: false,
-          mouseDrag: false,
-          touchDrag: true,
         },
         600: {
           items: 1,
           nav: false,
-          mouseDrag: false,
-          touchDrag: true,
         },
         1000: {
           items: 1,
