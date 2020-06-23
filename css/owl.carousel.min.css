@@ -188,3 +188,10 @@
   -ms-touch-action: auto !important;
   touch-action: auto !important;
 }
+
+.owl-carousel .owl-stage,
+.owl-carousel.owl-drag .owl-item,
+.owl-carousel {
+  -ms-touch-action: auto !important;
+  touch-action: auto !important;
+}
