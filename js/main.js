@@ -1,9 +1,9 @@
 AOS.init({
   duration: 800,
-  easing: "slide"
+  easing: "slide",
 });
 
-(function($) {
+(function ($) {
   "use strict";
 
   $(window).stellar({
@@ -14,23 +14,23 @@ AOS.init({
     hideDistantElements: false,
     scrollProperty: "scroll",
     horizontalOffset: 0,
-    verticalOffset: 0
+    verticalOffset: 0,
   });
 
   // Scrollax
   $.Scrollax();
 
-  var fullHeight = function() {
+  var fullHeight = function () {
     $(".js-fullheight").css("height", $(window).height());
-    $(window).resize(function() {
+    $(window).resize(function () {
       $(".js-fullheight").css("height", $(window).height());
     });
   };
   fullHeight();
 
   // loader
-  var loader = function() {
-    setTimeout(function() {
+  var loader = function () {
+    setTimeout(function () {
       if ($("#ftco-loader").length > 0) {
         $("#ftco-loader").removeClass("show");
       }
@@ -41,8 +41,10 @@ AOS.init({
   // Scrollax
   $.Scrollax();
 
-  var carousel = function() {
+  var carousel = function () {
     $(".home-slider").owlCarousel({
+      mouseDrag: true,
+      touchDrag: false,
       loop: true,
       autoplay: true,
       margin: 0,
@@ -53,55 +55,32 @@ AOS.init({
       items: 1,
       navText: [
         "<span class='ion-md-arrow-back'></span>",
-        "<span class='ion-chevron-right'></span>"
+        "<span class='ion-chevron-right'></span>",
       ],
       responsive: {
         0: {
           items: 1,
-          nav: false
+          nav: false,
+          mouseDrag: false,
+          touchDrag: true,
         },
         600: {
           items: 1,
-          nav: false
+          nav: false,
+          mouseDrag: false,
+          touchDrag: true,
         },
         1000: {
           items: 1,
-          nav: false
-        }
-      }
-    });
-    $(".carousel-work").owlCarousel({
-      autoplay: true,
-      center: true,
-      loop: true,
-      items: 1,
-      margin: 30,
-      stagePadding: 0,
-      nav: true,
-      navText: [
-        '<span class="ion-ios-arrow-back">',
-        '<span class="ion-ios-arrow-forward">'
-      ],
-      responsive: {
-        0: {
-          items: 1,
-          stagePadding: 0
+          nav: false,
         },
-        600: {
-          items: 2,
-          stagePadding: 50
-        },
-        1000: {
-          items: 3,
-          stagePadding: 100
-        }
-      }
+      },
     });
   };
   carousel();
 
   $("nav .dropdown").hover(
-    function() {
+    function () {
       var $this = $(this);
       // 	 timer;
       // clearTimeout(timer);
@@ -110,7 +89,7 @@ AOS.init({
       // $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
       $this.find(".dropdown-menu").addClass("show");
     },
-    function() {
+    function () {
       var $this = $(this);
       // timer;
       // timer = setTimeout(function(){
@@ -122,13 +101,13 @@ AOS.init({
     }
   );
 
-  $("#dropdown04").on("show.bs.dropdown", function() {
+  $("#dropdown04").on("show.bs.dropdown", function () {
     console.log("show");
   });
 
   // scroll
-  var scrollWindow = function() {
-    $(window).scroll(function() {
+  var scrollWindow = function () {
+    $(window).scroll(function () {
       var $w = $(this),
         st = $w.scrollTop(),
         navbar = $(".ftco_navbar"),
@@ -166,9 +145,9 @@ AOS.init({
   };
   scrollWindow();
 
-  var counter = function() {
+  var counter = function () {
     $("#section-counter").waypoint(
-      function(direction) {
+      function (direction) {
         if (
           direction === "down" &&
           !$(this.element).hasClass("ftco-animated")
@@ -176,14 +155,14 @@ AOS.init({
           var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(
             ","
           );
-          $(".number").each(function() {
+          $(".number").each(function () {
             var $this = $(this),
               num = $this.data("number");
             console.log(num);
             $this.animateNumber(
               {
                 number: num,
-                numberStep: comma_separator_number_step
+                numberStep: comma_separator_number_step,
               },
               7000
             );
@@ -195,10 +174,10 @@ AOS.init({
   };
   counter();
 
-  var contentWayPoint = function() {
+  var contentWayPoint = function () {
     var i = 0;
     $(".ftco-animate").waypoint(
-      function(direction) {
+      function (direction) {
         if (
           direction === "down" &&
           !$(this.element).hasClass("ftco-animated")
@@ -206,11 +185,11 @@ AOS.init({
           i++;
 
           $(this.element).addClass("item-animate");
-          setTimeout(function() {
-            $("body .ftco-animate.item-animate").each(function(k) {
+          setTimeout(function () {
+            $("body .ftco-animate.item-animate").each(function (k) {
               var el = $(this);
               setTimeout(
-                function() {
+                function () {
                   var effect = el.data("animate-effect");
                   if (effect === "fadeIn") {
                     el.addClass("fadeIn ftco-animated");
@@ -236,21 +215,21 @@ AOS.init({
   contentWayPoint();
 
   // navigation
-  var OnePageNav = function() {
+  var OnePageNav = function () {
     $(".smoothscroll[href^='#'], #ftco-nav ul li a[href^='#']").on(
       "click",
-      function(e) {
+      function (e) {
         e.preventDefault();
 
         var hash = this.hash,
           navToggler = $(".navbar-toggler");
         $("html, body").animate(
           {
-            scrollTop: $(hash).offset().top
+            scrollTop: $(hash).offset().top,
           },
           700,
           "easeInOutExpo",
-          function() {
+          function () {
             window.location.hash = hash;
           }
         );
@@ -260,7 +239,7 @@ AOS.init({
         }
       }
     );
-    $("body").on("activate.bs.scrollspy", function() {
+    $("body").on("activate.bs.scrollspy", function () {
       console.log("nice");
     });
   };
@@ -276,15 +255,15 @@ AOS.init({
     gallery: {
       enabled: true,
       navigateByImgClick: true,
-      preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+      preload: [0, 1], // Will preload 0 - before current, and 1 after the current image
     },
     image: {
-      verticalFit: true
+      verticalFit: true,
     },
     zoom: {
       enabled: true,
-      duration: 300 // don't foget to change the duration also in CSS
-    }
+      duration: 300, // don't foget to change the duration also in CSS
+    },
   });
 
   $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
@@ -294,12 +273,12 @@ AOS.init({
     removalDelay: 160,
     preloader: false,
 
-    fixedContentPos: false
+    fixedContentPos: false,
   });
 
   $("#appointment_date").datepicker({
     format: "m/d/yyyy",
-    autoclose: true
+    autoclose: true,
   });
 
   $("#appointment_time").timepicker();
@@ -310,16 +289,14 @@ AOS.init({
       "The Party Saver",
       "Mindanao's 1st Mobile Bar",
       "Best Tasting Cocktails",
-      "Party Till You Drop"
+      "Party Till You Drop",
     ];
 
     var quotesCounter = 0;
 
-    setInterval(function() {
-      $(".main-slide-title").fadeOut(400, function() {
-        $(this)
-          .html(quotes[quotesCounter])
-          .fadeIn(400);
+    setInterval(function () {
+      $(".main-slide-title").fadeOut(400, function () {
+        $(this).html(quotes[quotesCounter]).fadeIn(400);
       });
       if (quotesCounter === quotes.length - 1) quotesCounter = 0;
       else quotesCounter++;
@@ -327,7 +304,7 @@ AOS.init({
   } catch (e) {}
   // end quotes
 
-  $(document).on("submit", "#form-contact", function(e) {
+  $(document).on("submit", "#form-contact", function (e) {
     e.preventDefault();
 
     var $this = $(this);
@@ -337,16 +314,16 @@ AOS.init({
       type: "POST",
       crossDomain: true,
       dataType: "jsonp",
-      success: function() {},
-      error: function(e) {
+      success: function () {},
+      error: function (e) {
         console.log(e);
-      }
+      },
     });
 
     Swal.fire({
       type: "success",
-      title: "Message sent!"
-    }).then(function() {
+      title: "Message sent!",
+    }).then(function () {
       $this[0].reset();
     });
 
