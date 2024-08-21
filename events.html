@@ -146,9 +146,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript">
       var spData = null;
-      function doData(json) {
-        spData = json.feed.entry;
-      }
+      // function doData(json) {
+      //   spData = json.feed.entry;
+      // }
       
       function drawCell(tr, val) {
         var td = $("<td/>");
@@ -161,7 +161,7 @@
         if (rowData.length == 0) return null;
         var date = moment(rowData[0], "MM/DD/YYYY hh:mm A - hh:mm A");
         var time = rowData[0].split(' ');
-        var tr = $('<div class="row row-striped"><div class="col-2 text-right"><h1 class="display-4"><span class="badge badge-secondary">'+ date.format('DD') +'</span></h1><h2>'+ date.format('MMM').toUpperCase() +'</h2></div><div class="col-10"><h3 class="text-uppercase"><strong>'+ rowData[1] +'</strong></h3><ul class="list-inline"><li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> '+ date.format('dddd') +'</li><li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> '+ time[1] +' '+ time[2] +' - '+ time[4] +' '+ time[5] +'</li><li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> '+ rowData[3] +'</li></ul><p>'+ rowData[2] +'</p></div>');
+        var tr = $('<div class="row row-striped"><div class="col-2 text-right"><h1 class="display-4"><span class="badge badge-secondary">'+ date.format('DD') +'</span></h1><h2>'+ date.format('MMM YYYY').toUpperCase() +'</h2></div><div class="col-10"><h3 class="text-uppercase"><strong>'+ rowData[1] +'</strong></h3><ul class="list-inline"><li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> '+ date.format('dddd') +'</li><li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> '+ time[1] +' '+ time[2] +' - '+ time[4] +' '+ time[5] +'</li><li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> '+ rowData[3] +'</li></ul><p>'+ rowData[2] +'</p></div>');
         table.append(tr);
       }
       
@@ -174,25 +174,22 @@
       function readData(parent) {
         var data = spData;
         var table = drawTable(parent);
-        var rowData = [];
         
         for(var r=0; r<data.length; r++) {
-          var cell = data[r]["gs$cell"];
-          var val = cell["$t"];
-          if (cell.row !== "1") {
-            if (cell.col == 1) {
-              drawRow(table, rowData);
-              rowData = [];
-            }
-            rowData.push(val);
+          if (r > 0) {
+            drawRow(table, data[r]);
           }
         }
-        drawRow(table, rowData);
+        
       }
       $(document).ready(function(){
-        readData($("#data"));
+        var url = 'https://sheets.googleapis.com/v4/spreadsheets/1pO-Rsn2dJo_rpPjCKEsNe8VAJMKPwr_wZyg5TqjUsXQ/values/Events?alt=json&key=AIzaSyBSpoKU_8sHy6wKkTG-qcL2J_6f093Jgus';
+        ($.getJSON(url, 'callback=?')).success(function(data) {
+          spData = data.values;
+          readData($("#data"));
+        });
       });
     </script>
-    <script src="https://spreadsheets.google.com/feeds/cells/1pO-Rsn2dJo_rpPjCKEsNe8VAJMKPwr_wZyg5TqjUsXQ/1/public/values?alt=json-in-script&callback=doData"></script>
+    <script src="https://sheets.googleapis.com/v4/spreadsheets/1pO-Rsn2dJo_rpPjCKEsNe8VAJMKPwr_wZyg5TqjUsXQ/values/1?alt=json&key=AIzaSyBSpoKU_8sHy6wKkTG-qcL2J_6f093Jgus"></script>
   </body>
 </html>
